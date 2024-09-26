@@ -1,37 +1,65 @@
+#adivina el numero
+import random#aqui primero invocamos o traemos al plantel la palabra o funcion randon, esta permite elegir numeros "Random"
 print(" ")
 print("Ruvalcaba Valverde Miguel Angel")
 print("-----------Ingresar Numeros-----------")
-import random
+print("Pista vasada en el valor Fun de undertale:")
+NS = random.randint(2, 100)#aqui elegimos un numero random aleatorio del 2 al 100
+#ahora se haran un if, barios elif y un else, para haser un sitema de pistas
+if NS <= 39:#2|39
+    print("Perdon me comunico con G...")
+    print("Oh perdone me quiboque de numero.")
+elif NS <= 45:#40|45
+    print("*tu refrigerador esta andando?")
+    print("imagina que esta escrito en comic sans")
+elif NS <= 50:#46|50
+    print("*si disculpe quiero una pizza de...Oh perdone")
+elif NS <= 54:#51|54
+    print("Estos valores no son reconosidos por el valor fun de undertale")
+elif NS <= 57:#56|57
+    print("Nightmare")
+elif NS <= 60:#58|60
+    print("Estos valores no son reconosidos por el valor fun de undertale")
+elif NS <= 63:#61|63
+    print("Su segidor, de quien del antiguo sientifico W.D Gaster")
+elif NS == 64:#64
+    print("Este valor no es reconosidos por el valor fun de undertale")
+elif NS == 65:#65
+    print("Cuarto de Prueba de Sonido")
+elif NS == 66:#66
+    print("Detras de la puerta gris esta Gaster? o es algien mas?")
+elif NS <= 79:#67|79
+    print("Estos valores no son reconosidos por el valor fun de undertale")
+elif NS <= 89:#80|89
+    print("Olle deverias de conoser a suzy... el volvera el hombre olvidado Gaster")
+elif NS <= 100:#90|100
+    print("Goner Kid: un mundo donde todo sea igual pero tu no existes?")
+else:
+    print("No pasa nada")
+print(" ")
+print("------------Adivinar un número---------------")#ahora que comeinse el juego
+print("Tienes que adivinar un número entre 2 y 100.")
+print("Tienes 7 Intentos")
+inte = 7#primero alladimos una opcion que servida de intentos
+while inte> 0:#este esl bucle while, que funsiona siempre que para solo cuando una valor es correpto, en estecaso no parara de repetirse hasta que inte sea menor que 0
 
-numero_secreto = random.randint(1, 100)
+    try:#la verdad no se bien que hase esto pero investigrare, pero si lo quito el except no funsiona hasi que creo que esto hase especiones
+        ad = int(input("Adivina el número del 2 al 100 (usa la pista que te di): "))
+    except ValueError:#esto permite ver si hay un errpr
+        print("¡Error! Debes ingresar un número entero.")
 
-intentos= 7
+    if ad == NS:
+        print("¡Felicidades! Has adivinado el número.")
+        break#con esto finalisa el codigo cuando esta opcion para y hasi termina el programa
+    elif ad < NS:
+        print("El número es más grande.")
+    else:
+        print("El número es más pequeño.")
+    inte -= 1
+    print("Te quedan",inte,"intentos.")
 
-print("¡Bienvenido al juego de adivinar el número!")
-print("Tienes que adivinar un número entre 1 y 100. Tienes 7 intentos.")
-while intentos > 0:
-
-
-  try:
-      adivinanza = int(input("Adivina el número (entre 1 y 100): "))
-  except ValueError:
-      print("¡Error! Debes ingresar un número entero.")
-      continue
-
-  if adivinanza == numero_secreto:
-      print("¡Felicidades! Has adivinado el número.")
-      break
-   
-  elif adivinanza < numero_secreto:
-      print("El número es más grande.")
-  else:
-      print("El número es más pequeño.")
-  
-  intentos -= 1
-  print(f"Te quedan {intentos} intentos.")
-
-if intentos == 0:
-  print(f"¡Se acabaron los intentos! El número secreto era {numero_secreto}.")
+if inte == 0:#este if esta qui solito ya que cuando acaba el bucle y no adivinas el numero pasa esto.
+    print("¡Se acabaron los intentos! El número secreto era",NS)
 print("--------------------------------------")
-print("Resultado: hey se sabe cual es el numero")
+print("Resultado: el juego es funsional tanto las pistas como el juego")
 print(" ")
